@@ -1,0 +1,28 @@
+{
+  "name": "project_water",
+  "version": "1.0.1",
+  "description": "long",
+  "main": "gulpfile.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "long",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.7.0",
+    "gulp-connect-proxy": "^0.3.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.1",
+    "gulp-webserver": "^0.9.1",
+    "http-proxy-middleware": "^0.19.1"
+  }
+}
