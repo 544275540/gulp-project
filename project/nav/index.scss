@@ -1,0 +1,152 @@
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  width: inherit;
+  height: inherit;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  overflow: hidden;
+ background-image: linear-gradient(to right, #a1c4fd,#c2e9fb,#a1c4fd);
+}
+.zIndex {
+  z-index: 10;
+}
+#app::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 601px;
+  z-index: -10;
+  display: inline-block;
+  background-image: -webkit-linear-gradient(
+      0deg,
+      #ffecd2 1%,
+      transparent 1%,
+      transparent
+    ),
+    -webkit-linear-gradient(90deg, #ffecd2 1%, transparent 1%, transparent);
+  background-image: -moz-linear-gradient(
+      0deg,
+      #ffecd2 1%,
+      transparent 1%,
+      transparent
+    ),
+    -moz-linear-gradient(90deg, #ffecd2 1%, transparent 1%, transparent);
+  background-image: -o-linear-gradient(
+      0deg,
+      #ffecd2 1%,
+      transparent 1%,
+      transparent
+    ),
+    -o-linear-gradient(90deg, #ffecd2 1%, transparent 1%, transparent);
+  background-image: linear-gradient(
+      0deg,
+      #ffecd2 1%,
+      transparent 1%,
+      transparent
+    ),
+    linear-gradient(90deg, #ffecd2 1%, transparent 1%, transparent);
+  background-size: 60px 60px;
+}
+#app::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 601px;
+  width: 100%;
+  height: 80%;
+  z-index: -10;
+  display: inline-block;
+  transform-origin: top;
+  transform: rotateX(70deg);
+  background-image: -webkit-linear-gradient(
+      0deg,
+      #ffecd2 1%,
+      transparent 1%,
+      transparent
+    ),
+    -webkit-linear-gradient(90deg, #ffecd2 1%, transparent 1%, transparent);
+  background-image: -moz-linear-gradient(
+      0deg,
+      #ffecd2 1%,
+      transparent 1%,
+      transparent
+    ),
+    -moz-linear-gradient(90deg, #ffecd2 1%, transparent 1%, transparent);
+  background-image: -o-linear-gradient(
+      0deg,
+      #ffecd2 1%,
+      transparent 1%,
+      transparent
+    ),
+    -o-linear-gradient(90deg, #ffecd2 1%, transparent 1%, transparent);
+  background-image: linear-gradient(
+      0deg,
+      #ffecd2 1%,
+      transparent 1%,
+      transparent
+    ),
+    linear-gradient(90deg, #ffecd2 1%, transparent 1%, transparent);
+  background-size: 60px 60px;
+}
+
+
+
+
+//字体
+#warp {
+    margin: 100px auto;
+    font-size: 80px;
+    color: #005aa0;
+    text-align: center;
+//  animation: fontm 2s infinite alternate;
+    div {
+        display: inline-block;
+        width: 90px;
+        height: 100%;
+        position: relative;
+    }
+    div::before {
+        content: attr(data-descr);
+        position: absolute;
+        top: 0;
+        text-shadow: 3px 2px 4px #005aa0;
+        color: white;
+        transform-origin: left;
+//      transition: transform .5s;
+        z-index: 1;
+    }
+    div:nth-child(1)::before{
+        animation: fontm 2s infinite alternate;
+    }
+    div:nth-child(2)::before{
+        animation: fontm 2s 1s infinite alternate;
+    } 
+    div:nth-child(3)::before{
+        animation: fontm 2s 2s infinite alternate;
+    } 
+    div:nth-child(4)::before{
+        animation: fontm 2s 3s infinite alternate;
+    } 
+    div:nth-child(5)::before{
+        animation: fontm 2s 4s infinite alternate;
+    }  
+}
+
+
+@keyframes fontm{
+    to{
+        transform-origin: inherit;
+        transform: rotateY(0deg) skewY(0deg);
+    }
+    from{
+        transform-origin: left;
+        transform: rotateY(-40deg) skewY(10deg);
+    }
+}
