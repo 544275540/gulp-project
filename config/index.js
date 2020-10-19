@@ -27,6 +27,7 @@ var gulp = require('gulp'),//gulp主文件
 	uglify = require('gulp-uglify'),//js压缩
 	babel = require('gulp-babel'),//babel转换ES6
 	gulp_remove_logging = require("gulp-remove-logging"),//代码中清除所有控制台输出
+	pump = require('pump'),//更换执行pipe     可对打包
 
 	reload = require('browser-sync').reload;//热更新
 
@@ -74,20 +75,25 @@ gulp.task('htmlmin', function () {
 
 //3.js相关插件及配置
 	// 压缩js文件及去除console
-	gulp.task('jsmin', function () {
-		gulp.src('./project/**/*.js')
-			.pipe(babel({
+	gulp.task('jsmin', function (cb) {
+		pump([
+			gulp.src('./project/**/*.js'),
+			babel({
 				presets: ['@babel/preset-env']
-			}))
-			.pipe(uglify())
-			.pipe(gulp.dest('dist'))
-			.pipe(gulp_remove_logging({
-			        namespace: ['console']
-			}))
-			.pipe(reload({stream:true}));
+			}),
+			// concat('main.min.js'),//合并文件
+			uglify(),
+			gulp.dest('dist'),
+			gulp_remove_logging({
+				namespace: ['console']
+			})
+		], cb);
+
+		
 	})
 
 
+	
 
 //4.图片相关插件及配置
 // 压缩图片
